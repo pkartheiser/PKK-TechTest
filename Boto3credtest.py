@@ -9,5 +9,3 @@ s3 = boto3.resource(
 )
 for bucket in s3.buckets.all():
   print(bucket.name)
-#for bucket in s3.buckets.all() :
-    #print(bucket.name)
