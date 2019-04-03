@@ -7,4 +7,4 @@ client = boto3.client(
 
 
 for bucket in s3.buckets.all() :
-...     print(bucket.name)
+    print(bucket.name)
