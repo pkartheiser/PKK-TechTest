@@ -11,7 +11,6 @@ bucket = s3.Bucket('pk-kapost-tech1')
 size = 0
 
 for o in bucket.objects.all():
-    if 'pk-kapost-tech1' in o.key:
         print (o), o.size
         size += o.size
 print ('s3 size = %.3f MB' % (size/1024/1024))
