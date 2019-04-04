@@ -9,17 +9,17 @@ s3 = boto3.resource(
 )
 bucket = s3.Bucket('pk-kapost-tech1')
 for o in bucket.objects.all():
-  print(o.size)
+  print(o.key,o.size)
 
-mbthreshold = 10000000
+#mbthreshold = 10000000
 
-if o.size > mbthreshold
-  copy_source = {
-        'Bucket': 'pk-kapost-tech1',
-        'Key':
-      }
-  bucket = s3.Bucket('pk-kapost-tech2')
-  bucket.copy(copy_source, '')
+#if o.size > mbthreshold
+  #copy_source = {
+        #'Bucket': 'pk-kapost-tech1',
+        #'Key':
+     # }
+  #bucket = s3.Bucket('pk-kapost-tech2')
+  #bucket.copy(copy_source, '')
 
 
 
