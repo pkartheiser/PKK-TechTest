@@ -9,7 +9,6 @@ s3 = boto3.resource(
 )
 bucket = s3.Bucket('pk-kapost-tech1')
 size = 0
-
 for o in bucket.objects.all():
         print (o), o.size
         size += o.size
