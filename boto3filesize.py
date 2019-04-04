@@ -13,7 +13,8 @@ for o in bucket.objects.all():
 
 #mbthreshold = 10000000
 
-#if o.size > mbthreshold
+#if o.size > mbthreshold:
+    print("yes")
   #copy_source = {
         #'Bucket': 'pk-kapost-tech1',
         #'Key':
