@@ -11,24 +11,15 @@ bucket = s3.Bucket('pk-kapost-tech1')
 for o in bucket.objects.all():
   print(o.key,o.size)
 
-#mbthreshold = 10000000
+bthreshold = 100000
 
-#if o.size > mbthreshold:
-    print("yes")
-  #copy_source = {
-        #'Bucket': 'pk-kapost-tech1',
-        #'Key':
-     # }
-  #bucket = s3.Bucket('pk-kapost-tech2')
-  #bucket.copy(copy_source, '')
-
-
-
-
-
-#bucket = s3.Bucket('pk-kapost-tech1')
-#size = 0
-#for o in bucket.objects.all():
-#        print (o), o.size
-#        size += o.size
-#print ('s3 size = %.3f MB' % (size/1024/1024))
+if o.size > bthreshold:
+    #print("yes")
+#else:
+    #print("no")
+  copy_source = {
+        'Bucket': 'pk-kapost-tech1',
+        'Key':o.key
+      }
+  bucket = s3.Bucket('pk-kapost-tech2')
+  bucket.copy(copy_source,o.key)
