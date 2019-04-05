@@ -16,4 +16,4 @@ for o in bucket.objects.all():
         'Key':o.key
       }
     bucket = s3.Bucket('pk-kapost-tech2') #destination bucket
-    bucket.copy(copy_source,o.key)
+    bucket.copy(copy_source,o.key) #destination key file/files
