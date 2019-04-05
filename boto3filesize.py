@@ -10,16 +10,10 @@ s3 = boto3.resource(
 bucket = s3.Bucket('pk-kapost-tech1')
 for o in bucket.objects.all():
   print(o.key,o.size)
-
-bthreshold = 100000
-
-if o.size > bthreshold:
-    #print("yes")
-#else:
-    #print("no")
-  copy_source = {
+  if o.size > 10000000:
+    copy_source = {
         'Bucket': 'pk-kapost-tech1',
         'Key':o.key
       }
-  bucket = s3.Bucket('pk-kapost-tech2')
-  bucket.copy(copy_source,o.key)
+    bucket = s3.Bucket('pk-kapost-tech2')
+    bucket.copy(copy_source,o.key)
